@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([
-    'auth:sanctum',
+    // 'auth:sanctum',
 ])
     ->name('statuses.')
     ->namespace("\App\Http\Controllers")

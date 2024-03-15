@@ -47,6 +47,7 @@ class UserController extends Controller
                 'message' => 'Email already exists'
             ], 400);
         }
+        $user = User::where('email', $validated['email'])->first();
         $validated['password'] = Hash::make($validated['password']);
         $created = User::create([
             'name' => $validated['name'],
@@ -101,6 +102,7 @@ class UserController extends Controller
     public function login(LoginRequest $request)
     {
         $input = $request->validated();
+
         $user = User::where('email', $input['email'])->first();
         if (!$user || !Hash::check($input['password'], $user->password)) {
             return response()->json([

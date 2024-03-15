@@ -1,10 +1,10 @@
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:8000/api/v1";
+axios.defaults.baseURL = "https://task.truongnguyen869.click/api/v1";
 
 const api = axios.create({
-    baseURL: "http://localhost:8000/api/v1",
+    baseURL: "https://task.truongnguyen869.click/api/v1",
     headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
